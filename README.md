@@ -1,4 +1,4 @@
-# Cognitive Health Index
+# Cognitive Health Index - FastAPI App for Dementia Prediction and SHAP Explanations
 
 This project builds a machine learning system to predict a person’s cognitive health status—whether they’re currently nondemented, diagnosed with dementia, or have converted from healthy to demented over time. It uses structured clinical and imaging-derived data as input, trains an XGBoost model for classification, and serves predictions through a FastAPI backend. Every prediction is also explained using SHAP, so we can see exactly which features influenced the outcome. The result is a fully functional and interpretable ML pipeline designed for real-time use.
 
