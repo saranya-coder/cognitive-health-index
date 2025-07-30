@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 # Load the original dataset
-df = pd.read_csv("dementia_dataset.csv")
+df = pd.read_csv("data/dementia_dataset.csv")
 
 # Drop unnecessary columns
 df = df.drop(columns=["Subject ID", "MRI ID", "Visit", "MR Delay"])
@@ -21,5 +21,5 @@ for col in ["M/F", "Hand", "Group"]:
     label_encoders[col] = le
 
 # Save cleaned data
-df.to_csv("final_dataset.csv", index=False)
+df.to_csv("data/final_dataset.csv", index=False)
 print("Final dataset saved to final_dataset.csv")

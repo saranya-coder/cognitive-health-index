@@ -10,7 +10,7 @@ import shap
 import matplotlib.pyplot as plt
 
 # Load dataset
-df = pd.read_csv("final_dataset.csv")
+df = pd.read_csv("data/final_dataset.csv")
 
 # Drop rows with missing values (or use imputation if preferred)
 df = df.dropna()
@@ -40,7 +40,7 @@ y_pred = model.predict(X_test)
 print(classification_report(y_test, y_pred))
 
 # Save trained model
-joblib.dump(model, "cognitive_model.pkl")
+joblib.dump(model, "models/cognitive_model.pkl")
 print("Model saved as cognitive_model.pkl")
 
 # ========== SHAP EXPLAINABILITY ==========
@@ -53,9 +53,9 @@ shap_values = explainer.shap_values(X_train)
 
 # Plot summary (bar chart) and save
 shap.summary_plot(shap_values, X_train, show=False)
-plt.savefig("shap_summary_plot.png")
+plt.savefig("plots/shap_summary_plot.png")
 print("SHAP summary plot saved as shap_summary_plot.png")
 
 # Save SHAP explainer for FastAPI use
-joblib.dump(explainer, "shap_explainer.pkl")
+joblib.dump(explainer, "models/shap_explainer.pkl")
 print("SHAP explainer saved as shap_explainer.pkl")

@@ -8,8 +8,8 @@ import joblib
 import shap
 
 # Load model and explainer
-model = joblib.load("cognitive_model.pkl")
-explainer = joblib.load("shap_explainer.pkl")
+model = joblib.load("models/cognitive_model.pkl")
+explainer = joblib.load("models/shap_explainer.pkl")
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -127,7 +127,7 @@ def explain_plot(input: InputFeatures):
     # Plot and save
     plt.figure()
     shap.plots.waterfall(explanation, show=False)
-    plt.savefig("shap_plot.png")
+    plt.savefig("plots/shap_plot.png")
     plt.close()
 
-    return FileResponse("shap_plot.png", media_type="image/png")
+    return FileResponse("plots/shap_plot.png", media_type="image/png")

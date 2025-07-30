@@ -3,7 +3,7 @@
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv("final_dataset.csv")
+df=pd.read_csv("data/dementia_dataset.csv")
 
 # Show the first few rows
 print(" First 5 rows:")
